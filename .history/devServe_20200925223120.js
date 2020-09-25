@@ -2,11 +2,9 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const app = express();
 
-const initializePassport = require("./passport-config.js");
+const initializedPassport = require("./passport-config");
 const passport = require("passport");
-initializePassport(passport, (email) =>
-  users.find((user) => user.email === email)
-);
+initializedPassport("passport");
 
 const users = [];
 
